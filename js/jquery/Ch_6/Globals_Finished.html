@@ -8,7 +8,7 @@
     	border: 2px dashed lightgray;
     }
     </style>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
       $("document").ready(function() {
         $(document).ajaxStart(function () {
@@ -37,11 +37,11 @@
 
         getData();
       });
-      
+
       function getData() {
       	$.get("testdata2.txt", successFn);
       }
-      
+
       function successFn(result) {
         console.log("Setting result");
       	$("#content").append(result);

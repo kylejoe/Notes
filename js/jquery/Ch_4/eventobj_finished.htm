@@ -3,7 +3,7 @@
 <head>
     <title>Using the jQuery Event Object</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#Div1").on("click dblclick", { name: "Div 1" }, function(evt) {
@@ -30,14 +30,14 @@
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
-            
+
             $("#input1").keypress(updateEventDetails);
         });
-        
+
         function updateEventDetails(evt) {
             // clear any current text before we update the value fields
             $(".detailLine span[id]").text("");
-            
+
             $("#evtType").text(evt.type);
             $("#evtWhich").text(evt.which);
             $("#evtTarget").text(evt.target.id);

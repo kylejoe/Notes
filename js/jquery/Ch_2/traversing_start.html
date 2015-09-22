@@ -3,9 +3,40 @@
 <head>
     <title>Using jQuery Document Traversal</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+
+            // The children() function retrieves the immediate (that is
+            // first-level down) child elements of the matched set,
+            // excluding text nodes
+            // $("#example").children().css("border", "3px solid red");
+
+            // Get element
+            // var elem = $("#para1");
+            // elem.prev().css("border", "3px dashed green");
+            // elem.next().css("border", "4px solid red");
+            // elem.parents().css("border", "3px solid blue");
+
+            //Does not include the body
+            // elem.parentsUntil($("body")).css("border", "3px solid blue");
+
+            // Use the find function to locate content within
+            // particular elements
+            // $("#example").find('#para4').css("border", "3px solid red");
+
+            // Use the each function to iterate over a set of
+            // elements and operate on them
+
+            // var leftmargin = 0;
+            // var border = 3;
+
+            // $("#example p").each(function(index, element){
+            //     $(element).css('border', border+"px solid red")
+            //                     .css("margin-left", leftmargin);
+            //     border += 2;
+            //     leftmargin += 10;
+            // });
         });
     </script>
 </head>

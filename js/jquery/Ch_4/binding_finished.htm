@@ -3,7 +3,7 @@
 <head>
     <title>Binding and Unbinding Events with jQuery</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             // Older versions of jQuery used the "bind" and "unbind" functions
@@ -22,14 +22,14 @@
                 $("#evtTarget").html("<p>You shut off the hover effect!</p>");
                 $("#evtTarget").removeClass("highlighted");
             });
-            
+
             $("#textEntry").on("keypress", function(evt) {
                 $("#keyPress").text(String.fromCharCode(evt.charCode));
             });
         });
 
         function highlight(evt) {
-            $("#evtTarget").toggleClass("highlighted");        
+            $("#evtTarget").toggleClass("highlighted");
         }
     </script>
     <style type='text/css'>

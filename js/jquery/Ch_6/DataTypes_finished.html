@@ -8,13 +8,13 @@
     	border: 2px dashed lightgray;
     }
     </style>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
       $("document").ready(function() {
         //getXMLData();
         //getJSONData();
       });
-      
+
       function getXMLData() {
       	$.get("testxmldata.xml", function(result) {
       		var title = result.getElementsByTagName("title")[0];
@@ -23,7 +23,7 @@
       		$("#content").append(val);
       	});
       }
-      
+
 	  function getJSONData() {
 		var flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 		$.getJSON( flickrAPI, {
@@ -33,7 +33,7 @@
 			},
 			successFn);
       }
-      
+
       function successFn(result) {
 		$.each(result.items, function(i, item) {
 			$("<img>").attr("src", item.media.m).appendTo("#content");

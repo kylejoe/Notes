@@ -8,7 +8,7 @@ CHAPTER 1:
 ------------------------
 First jQuery-Enabled File
 
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
 
     <script type="text/javascript">
         $("document").ready(function() {
@@ -51,17 +51,17 @@ Advanced Selectors
         // The child selector "parent > child" selects "child" elements
         // that are immediate descendants of the "parent"
         $("div > p").css("border", "3px solid red");
-        
-        // The descendant selector "ancestor descendant" selects "descendant" 
+
+        // The descendant selector "ancestor descendant" selects "descendant"
         // elements as long as they have an "ancestor" element somewhere
         // above them
         $("div p.a").css("border", "3px solid red");
-        
-        // The next adjacent selector "prev + next" selects the "next" 
+
+        // The next adjacent selector "prev + next" selects the "next"
         // element if it is immediately preceded by a "prev" element
         $("ul + div").css("border", "3px solid red");
-        
-        // Next sibling selector "prev ~ siblings" selects all "siblings" 
+
+        // Next sibling selector "prev ~ siblings" selects all "siblings"
         // elements that come after a "prev" element
         $("#para1 ~ p").css("border", "3px solid red");
 
@@ -77,7 +77,7 @@ Advanced Filters
             $("p:contains('3')").css("border", "3px solid red");
             $("p:parent").css("border", "3px solid red");
             $("div:has(p[class=a])").css("border", "3px solid red");
-            
+
             $("div p:first-child").css("border", "3px solid red");
             $("div p:last-of-type").css("border", "3px solid red");
             $("div p:nth-child(3)").css("border", "3px solid red");
@@ -86,8 +86,8 @@ Advanced Filters
 
 Traversing:
 
-            // The children() function retrieves the immediate (that is, 
-            // first-level down) child elements of the matched set, 
+            // The children() function retrieves the immediate (that is,
+            // first-level down) child elements of the matched set,
             // excluding text nodes.
             $("#example").children().css("border", "3px solid red");
 
@@ -95,14 +95,14 @@ Traversing:
             elem.prev().css("border", "3px solid red");
             elem.next().css("border", "3px solid green");
             elem.parents().css("border", "3px solid blue");
-            
+
             elem.parentsUntil($("body")).css("border", "3px solid blue");
-            
-            // use the find function to locate content within 
+
+            // use the find function to locate content within
             // particular elements
             $("#example").find("#para4").css("border", "3px solid red");
 
-            // use the each function to iterate over a set of 
+            // use the each function to iterate over a set of
             // elements and operate on them
             var leftmargin = 0;
             var border = 3;
@@ -124,17 +124,17 @@ Creating Content
         function createContent() {
             // use the html() function to change the content of the div
             $("#example").html("<p>Hi there!</p>");
-            
+
             // create a new <p> and set the content of para1 to it
             var newItem = $("<p>This is a new paragraph</p>");
             $("#para1").html(newItem);
         }
-        
+
         function changeContent() {
             // set the text content of the last paragraph
             $("p:last").text("I've changed the last paragraph");
         }
-        
+
         function changeAllTheContent() {
             $("#example p").text("I've changed all the paragraphs!");
         }
@@ -147,7 +147,7 @@ Inserting Content
             $("#example p").prepend("Hello! ");
             $("#example p:last").appendTo("#example p:first");
             $("#example p:last").prependTo("#example p:first");
-            
+
             // Insertion functions for inserting outside of content
             $("#example p").after("**");
             $("#example p").before("**");
@@ -166,7 +166,7 @@ Altering Content
         $("#example p[id]").replaceWith("<div>replaced</div>");
         $("#example p").replaceWith(replacementFn);
 
-    
+
     function replacementFn() {
         if ($(this).text().indexOf("1") != -1) {
             return "<p>This is paragraph uno</p>";
@@ -233,20 +233,20 @@ CSS
             color: green;
             text-transform: uppercase
         }
-        
+
         $(function() {
             showValues();
-            
+
             $("#example").click(changeValues);
         });
-        
+
         function changeValues() {
             $("#example").height(100);
             $("#example").width(200);
-            
+
             showValues();
         }
-        
+
         function showValues() {
             $("#height").html($("#example").height());
             $("#width").html($("#example").width());
@@ -254,9 +254,9 @@ CSS
             $("#innerW").html($("#example").innerWidth());
             $("#outerH").html($("#example").outerHeight());
             $("#outerW").html($("#example").outerWidth());
-            $("#offset").html($("#example").offset().top + ", " + 
+            $("#offset").html($("#example").offset().top + ", " +
                             $("#example").offset().left);
-            $("#position").html($("#example").position().top + ", " + 
+            $("#position").html($("#example").position().top + ", " +
                                 $("#example").position().left);
         }
 
@@ -272,14 +272,14 @@ Binding and Unbinding Events
                 $("#evtTarget").html("<p>You shut off the hover effect!</p>");
                 $("#evtTarget").removeClass("highlighted");
             });
-            
+
             $("#textEntry").on("keypress", function(evt) {
                 $("#keyPress").text(String.fromCharCode(evt.charCode));
             });
 
 
         function highlight(evt) {
-            $("#evtTarget").toggleClass("highlighted");        
+            $("#evtTarget").toggleClass("highlighted");
         }
 
 
@@ -294,7 +294,7 @@ Event Helpers
 
             $("#evtTarget").click(fnClick1);
             $("#evtTarget").dblclick(fnClick2);
-            
+
             $(window).resize(fnResize);
 
 
@@ -338,14 +338,14 @@ The Event Object
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
-            
+
             $("#input1").keypress(updateEventDetails);
 
 
         function updateEventDetails(evt) {
             // clear any current text before we update the value fields
             $(".detailLine span[id]").text("");
-            
+
             $("#evtType").text(evt.type);
             $("#evtWhich").text(evt.which);
             $("#evtTarget").text(evt.target.id);
@@ -454,16 +454,16 @@ Basic AJAX:
 
           // whether this is a POST or GET request
           type: "GET",
-         
+
           // the type of data we expect back
           dataType : "text",
-          
+
           // function to call for success
           success: successFn,
 
           // function to call on an error
           error: errorFn,
-                           
+
           // code to run regardless of success or failure
           complete: function( xhr, status ) {
             console.log("The request is complete!");
@@ -474,7 +474,7 @@ Basic AJAX:
 AJAX Helpers:
 
       	$.get("testdata.txt", successFn);
-      	
+
         //$("#content").load("testdata.txt");
         //$("#content").load("testdata.html #p2");
 

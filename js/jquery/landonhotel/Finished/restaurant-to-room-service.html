@@ -3,7 +3,7 @@
 <head>
 <title>Room Service | The Landon Hotel</title>
 <link rel="stylesheet" href="style/style.css">
-<script src="../../jquery-1.11.1.js"></script>
+<script src="../../jquery-1.11.3.js"></script>
 <script>
     $("document").ready(function () {
         $("#restaurants li[data-type='veg']").append(" (v)");
@@ -31,7 +31,7 @@
 </nav>
 
     <div class="content">
-		
+
 	<h1>Room Service</h1>
 	<img align="left" src="img/restaurant-to-room_web.png" alt="restaurant to room_web" width="300" height="282" /><p>No matter what you're craving, <em><strong>Restaurant to Room</strong></em> has you covered. Our fast and friendly delivery service brings you hot, fresh food, from a diverse choice of local restaurants.</p>
     <ul id="restaurants">
@@ -47,10 +47,10 @@
         <li data-type="meat"><a title="Totally Fishy" href="#" target="_blank">Totally Fishy</a></li>
     </ul>
     <p>Simply fill out the online form below, and we'll have food delivered directly to your room, within an hour, or your meal is free. The only difficult part is choosing. (Sorry, we can't help you with that.)</p>
-				
+
     <form method="post" action="" id="roomserviceform" class="roomservice-form">
         <div>Restaurant Preference
-            <select> 
+            <select>
             <option value="Please Make a Selection" selected="selected"></option>
             <option value="1" >Dinner Destiny</option>
             <option value="2" >Eat Your Veggies Caf&eacute;</option>
@@ -63,16 +63,16 @@
             <option value="9" >Supreme &amp; Fancy Pizza</option>
             <option value="10" >Totally Fishy</option>
             </select>
-        </div> 
+        </div>
 
         <div>Name <input type="text" value="" size="30" /></div>
-        <div>Room Number <input size="3" maxlength="4" value=""/></div> 
-        <div>Delivery Time <input size="3" maxlength="4" value=""/></div> 
-        <div>Phone (<input size="3" maxlength="3" value="" type="text">)<input size="3" maxlength="3" value="" type="text"> -<input size="4" maxlength="4" value="" type="text"></div>				
+        <div>Room Number <input size="3" maxlength="4" value=""/></div>
+        <div>Delivery Time <input size="3" maxlength="4" value=""/></div>
+        <div>Phone (<input size="3" maxlength="3" value="" type="text">)<input size="3" maxlength="3" value="" type="text"> -<input size="4" maxlength="4" value="" type="text"></div>
         <div>Email <input type="text" maxlength="255" value=""/></div>
         <div><input type="submit" name="submit" value="Submit" /></div>
-    </form>	
-	
+    </form>
+
 	</div>
 </body>
 </html>

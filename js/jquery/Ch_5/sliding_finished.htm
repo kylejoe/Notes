@@ -3,7 +3,7 @@
 <head>
     <title>Using slide to show and reveal elements</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#slideup").click(function() {
@@ -16,7 +16,7 @@
                 $("#theDiv").slideToggle("slow", onToggleFinished);
             });
         });
-        
+
         function onToggleFinished() {
             // the value of this is set to the DOM element being animated
             console.log ("slideToggle complete on: " + this.id);

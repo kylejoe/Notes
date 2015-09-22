@@ -3,7 +3,7 @@
 <head>
     <title>Showing and Hiding Elements</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#show").click(function() {
@@ -16,7 +16,7 @@
                 $("#theDiv").toggle("slow", completion);
             });
         });
-        
+
         function completion() {
             // the value of this is set to the DOM element being affected
             $(this).text("Animation complete");

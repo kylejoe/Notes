@@ -8,12 +8,12 @@
     	border: 2px dashed lightgray;
     }
     </style>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
       $("document").ready(function() {
         getData();
       });
-      
+
       function getData() {
         $.ajax({
           // the URL for the request
@@ -21,7 +21,7 @@
 
           // whether this is a POST or GET request
           type: "GET",
-         
+
           // the type of data we expect back
           dataType : "text"
         })
@@ -31,7 +31,7 @@
             console.log("The request is complete!");
         });
       }
-      
+
       function successFn(data, status, jqXHR) {
         console.log("Setting result");
       	$("#content").append(data);

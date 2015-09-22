@@ -3,7 +3,7 @@
 <head>
 <title>Creating New Content</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
             document.getElementById("create").addEventListener("click", function (evt) {
@@ -26,12 +26,12 @@
             var newItem = $("<p>This is a new paragraph</p>");
             $("#para1").html(newItem);
         }
-        
+
         function changeContent() {
             // set the text content of the last paragraph
             $("p:last").text("I've changed the last paragraph");
         }
-        
+
         function changeAllTheContent() {
             $("#example p").text("I've changed all the paragraphs!");
         }
@@ -53,7 +53,7 @@
     </div>
     <div>
         <button id="create">Create Content</button>
-        <button id="change">Change Content</button>        
+        <button id="change">Change Content</button>
         <button id="changeAll">Change All</button>
     </div>
 </body>

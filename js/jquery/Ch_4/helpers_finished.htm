@@ -3,15 +3,15 @@
 <head>
     <title>Using jQuery Event Helper Functions</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#evtTarget").hover(highlight, highlight);
 
             $("#evtTarget").click(fnClick1);
-            
+
             $("#evtTarget").dblclick(fnClick2);
-            
+
             $(window).resize(fnResize);
 
             $("#evtTarget").one("click", function() {
@@ -20,7 +20,7 @@
                 });
             });
         });
-        
+
         function highlight(evt) {
             $("#evtTarget").toggleClass("highlighted");
         }

@@ -3,9 +3,19 @@
 <head>
     <title>Using Child and Content Filters</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+            // $("div:has(p[class=a])").css("border", "3px solid purple");
+
+            // $("div p:first-child").css("border", "2px dashed red");
+
+            // $("div p:last-of-type").css("border", "4px solid pink");
+
+            // $("div p:nth-child(3)").css("border", "3px solid gray");
+
+            // Every multiple of 2 is being selected
+            // $("div p:nth-child(2n)").css("border", "3px solid green");
         });
     </script>
 </head>

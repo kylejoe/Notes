@@ -3,21 +3,21 @@
 <head>
     <title>jQuery CSS Sizing and Positioning</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
             showValues();
-            
+
             $("#example").click(changeValues);
         });
-        
+
         function changeValues() {
             $("#example").height(100);
             $("#example").width(200);
-            
+
             showValues();
         }
-        
+
         function showValues() {
             $("#height").html($("#example").height());
             $("#width").html($("#example").width());
