@@ -4,6 +4,37 @@
 <title>Specials | The Landon Hotel</title>
 <link rel="stylesheet" href="style/style.css">
 <script src="../../jquery-1.11.3.js"></script>
+<script type="text/javascript">
+        $("document").ready(function(){
+            // First solution
+
+            // $("h2").each(function(i) {
+            //         $("h1:first").append( "<ul><li><a href=#"+this.id+">"+this.outerText+"</a></li></ul>");
+            //     });
+
+            // Second solution
+
+            // Select the H2 headings in the content section - these contain the test for the links
+            var headings = $(".content h2");
+            // Create a new empty UL tag to hold the list of links
+            var list = $("<ul id='bookmarks'>");
+            // We need a counter to make sure each anchor tag has a unique name
+            var cAnchorCount = 0;
+
+            // For each one of the H2's, create a named anchor link to and a link for the list
+            headings.each(function(indx, elem) {
+                // Set the HTML of this H2 to contain the new anchor tag that is the link destination
+                $(this).html("<a name='bookmark" + cAnchorCount + "'></a>" + $(this).html());
+                // Now make a new LI tag for the list that links to the anchor tag and has the text of the h2
+                list.append($("<li><a href='#bookmark" + cAnchorCount++ +"'>" + $(this).text() + "</a></li>" ));
+                // When we're done, insert the list after the H1 heading that lists the specials
+                $(".content h1").after(list);
+            });
+
+    });
+
+
+</script>
 </head>
 <body>
 	<div class="container">
@@ -27,7 +58,7 @@
 
 		<div class="content">
 		<h1>Specials</h1>
-		<h2>San Francisco, Bernal Heights</h2>
+		<h2 id="sanFran">San Francisco, Bernal Heights</h2>
 		<h3>Military Family Deal:</h3>
 		<p>Active and retired military, and their families, save 20% when booking a three or more day stay at the Landon Hotel in lovely Bernal Heights, San Francisco. Book by August 1st, 2015.</p>
 		<h3>Bring Fido:</h3>
@@ -35,19 +66,19 @@
 		<h3>Meeting Mondays:</h3>
 		<p>The new Bernal Heights conference room is just the place for your corporate meetings, and if you book for three or more consecutive days, that include a Monday, you'll receive Monday free. Book by September 15th, 2014.</p>
 <hr/>
-		<h2>London, West End</h2>
+		<h2 id="london">London, West End</h2>
 		<h3>Theatre Package:</h3>
 		<p>Theatre lovers can enjoy two free tickets to a West End theater production of their choice, when booking a weekend stay at the West End Landon.  Tickets are mezzanine level and are limited to available productions at the time of booking. Book by August 1st, 2015.</p>
 		<h3>Shopper's Paradise:</h3>
 		<p>Oxford, Regent, and Bond Streets have some of the best shopping in the world, and all are just a tube stop away when you stay at the West End Landon. And, if you book a minimum of five days, you'll get a bonus gift certificate worth $125 to use in the boutique of your choice, based on participating vendors at time of booking. Book by November 2015.</p>
 <hr/>
-		<h2>Hong Kong, Kwun Tong</h2>
+		<h2 id="hongKong">Hong Kong, Kwun Tong</h2>
 		<h3>Spa Holiday:</h3>
 		<p>The Hong Kong is home to a half-dozen world-renowned spas, some tucked away in skyscrapers, others in beachside retreats. You can have your pick of a one-day Spa Holiday if you book a five-consecutive night stay during the months of February through April. Book by November 1, 2014.</p>
 		<h3>Leisure and Luxury:</h3>
 		<p>Stay at the Landon Hotel in the Kwun Tong District and you'll have both leisure and luxury at your fingertips. Play a complimentary round of golf and enjoy a complimentary seaweed body wrap and massage, if you book a weekend stay by August 1st , 2015.</p>
 <hr/>
-		<h2>Paris, Latin Quarter</h2>
+		<h2 id="paris">Paris, Latin Quarter</h2>
 		<h3>Sweet Deal:</h3>
 		<p>Paris is renowned for its delectable pastries and other dessert creations by the most highly skilled chefs in the world. If you book a weekend stay by February 28th, 2015 you'll receive a complimentary dessert tray every night of your stay. Be prepared for a sweet feast!</p>
 		<h3>Spiritual Walk:</h3>
