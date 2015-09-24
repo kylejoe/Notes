@@ -6,6 +6,35 @@
 <script type="text/javascript" src="../jquery-1.11.3.js"></script>
 <script type="text/javascript">
     $("document").ready(function() {
+        // Will wrap every <p> within the div that has id=example
+        // $("#example p").wrap("<div style='color:red'></div>");
+
+        // WIll wrap all <p> as single entity
+        // $("#example p").wrapAll('<div style="border:3px solid red"></div>');
+
+        // Empties out a container
+        // $("#example").empty();
+
+        // Remove paragraph within <p class='a'> and <p class='b'>
+        // $("#example p.a, #example p.b").remove();
+
+        // Same as remove() but data and event handlers still present
+        // $("#example p.a, #example p.b").detach();
+
+        // $("<div>replaced</div>").replaceAll('#example p[id]');
+
+        // replaceWith() Can also specify a callback function
+        // $("#example p[id]").replaceWith('<div>replaced</div>');
+        $("#example p").replaceWith(replacementFn);
+
+        function replacementFn() {
+            // This refers to current element in result set
+            // .text() to check paragraph content has 1 in sentence
+            if ($(this).text().indexOf("1") != "-1") {
+                return "<p>This is paragraph uno</p>";
+            };
+        }
+
     });
 </script>
 </head>

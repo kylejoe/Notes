@@ -7,10 +7,17 @@
     <script>
         $("document").ready(function() {
             $("#show").click(function (evt) {
+              // If there is any data, display it
+              alert(JSON.stringify($("#example").data(), null, " "));
             });
             $("#store").click(function (evt) {
+              // Store some arbitrary data on the DIV object
+              $("#example").data('key1', '1234');
+              $("#example").data("key2", "Joe Marini");
             });
             $("#remove").click(function (evt) {
+              // Clear the data from the div
+              $("#example").removeData();
             });
         });
     </script>
