@@ -15,11 +15,18 @@
       });
 
       function getData() {
+        // $.get("testdata.txt", successFn);
+
+        // Load entire file from server
+        // $("#content").load("testdata.html");
+
+        // Load fragment of file
+        $("#content").load("testdata.html #p2");
       }
 
       function successFn(result) {
         console.log("Setting result");
-      	$("#content").append(result);
+        $("#content").append(result);
       }
       function errorFn(xhr, status, strErr) {
         alert(strErr);

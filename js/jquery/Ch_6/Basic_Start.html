@@ -15,11 +15,26 @@
       });
 
       function getData() {
+        $.ajax({
+          // the URL for the request
+          url: "testdata.txt",
+
+          // whether this is a POST or a GET request
+          type: "GET",
+
+          // the type of data we expect back
+          dataType: "text",
+        })
+        .done(successFn)
+        .fail(errorFn)
+        .always(function (data, textStatus, jqXHR){
+            console.log("The request is complete!");
+        });
       }
 
       function successFn(result) {
         console.log("Setting result");
-      	$("#content").append(result);
+        $("#content").append(result);
       }
       function errorFn(xhr, status, strErr) {
         console.log("There was an error!");

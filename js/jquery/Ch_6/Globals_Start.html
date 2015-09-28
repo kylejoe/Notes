@@ -11,6 +11,37 @@
     <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
       $("document").ready(function() {
+
+        $(document).ajaxStart(function() {
+          /* Stuff to do when an AJAX call is started and no other AJAX calls are in progress */
+          console.log("AJAX starting!");
+        });
+
+        $(document).ajaxStop(function() {
+          /* stuff to do when all AJAX calls have completed */
+          console.log("AJAX request ended!");
+        });
+
+        $(document).ajaxSend(function(evt, jqXHR, options){
+          /* stuff to do before an AJAX request is sent */;
+          console.log("About to request data...");
+        });
+
+        $(document).ajaxComplete(function(evt, jqXHR, settings) {
+          /* executes whenever an AJAX request completes */
+          console.log("Everything's finished!");
+        });
+
+        $(document).ajaxError(function(evt, jqXHR, settings, err) {
+          /* Stuff to do when an AJAX call returns an error */
+          console.log("Hmm. Seems like there was a problem: " + err)
+        });
+
+        $(document).ajaxSuccess(function(evt, jqXHR, options) {
+          /* executes whenever an AJAX request completes successfully */
+          console.log("Looks like everything worked!");
+        });
+
         getData();
       });
 
