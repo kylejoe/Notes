@@ -6,6 +6,18 @@
     <script type="text/javascript" src="../jquery-1.11.3.js"></script>
     <script type="text/javascript">
         $(function() {
+            $("#show").click(function(){
+                $("#theDiv").show("fast");
+            });
+            $("#hide").click(function(){
+                $("#theDiv").hide(1000, "swing");
+            });
+            $("#toggle").click(function(){
+                $("#theDiv").toggle("slow", completion);
+            });
+            function completion(){
+                $(this).text("Animation Complete!");
+            }
         });
     </script>
     <style type="text/css">
