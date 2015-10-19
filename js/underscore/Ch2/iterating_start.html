@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iterating Collections with Underscore</title>
+    <script type="text/javascript" src="../underscore.js"></script>
+    <script type="text/javascript" src="../SampleData.js"></script>
+    <script type="text/javascript">
+
+        function getStudentInfo(elem, indx, list){
+            // elem will point to a particular piece of data
+            // Index will be current spot in array
+            // List reference to array itself
+            var container = document.getElementById("container");
+            var student = "<p>" + elem.firstname + " " + elem.lastname + ", Grade: " + elem.grade + "</p>";
+            container.innerHTML = container.innerHTML + student;
+        }
+
+        // Add event listener on window object
+    window.addEventListener("load", function(e) {
+        // Use the "size" property to get number of elements
+        numStudentsElem = document.getElementById("numstudents");
+        numStudentsElem.innerHTML = numStudentsElem.innerHTML + _.size(students);
+
+        // use the each() function to iterate over every element
+        // getStudentInfo callback function
+        _.each(students, getStudentInfo);
+    });
+
+    </script>
+</head>
+<body>
+<h1>Iterating Collections with Underscore</h1>
+<h2>Student Information:</h2>
+<h3 id="numstudents">Number of Students: </h3>
+<div id="container">
+</div>
+</body>
+</html>
