@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 function changePanels(newIndex){
     var newPanelPosition = (window.panelWidth*newIndex) * -1;
-    var newPanelHeight = $('.sp .panel:nth-child('+(newIndex+1)+')').find('.panel_content').height() + 15;
+    var newPanelHeight = $('.sp .panel:nth-child('+(newIndex+1)+')').find('div.panel_content').height() + 15;
 
     $('.sp .panels').animate({left: newPanelPosition}, 1000);
     $('.sp .panel_container').animate({height: newPanelHeight}, 1000);
