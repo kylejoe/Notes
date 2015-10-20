@@ -24,8 +24,33 @@
         var container = document.getElementById("container");
         container.innerHTML = container.innerHTML + dataString;
     }
-        
+
+    // var templateString = "<div><span>Name: <%= lastname %></span></div>";
+    // var templateString2 = "<div><span>Name: <% print(lastname.toUpperCase()) %></span></div>";
+
+    // Templates not rendering!?!?!?!?!?!?!!!!???
+    var studentInfo1 = "<%= _.each(students, function(item) { %>" +
+                      "<div class='studentRec " +
+                      "<% (item.midterm_score + item.final_score) / 2 > 65 ? print('passingStudent') : print('failingStudent') %>'>" +
+                      "<span style='font-weight:bold'>Name:</span> <span><%= item.lastname %>, <%= item.firstname %> </span>" +
+                      "<span style='font-weight:bold'>School:</span> <span><%= item.school %></span></div>" +
+                      "<% }); %>";
+
     window.addEventListener("load", function(e) {
+
+      // var compiledTemplate = _.template(templateString);
+      // var compiledTemplate = _.template(templateString2);
+
+      // // now we can call the template with different data
+      // var result = compiledTemplate({
+      //   lastname: "Hossenfeffer"
+      // });
+
+      // to perform a one-off template operation, just pass in the data object
+      // as the second parameter to the template
+      var result = _.template(studentInfo1, students);
+
+      appendTemplateData(result);
     });
     </script>
 </head>
