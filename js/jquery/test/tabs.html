@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabs</title>
+
+    <style type="text/css">
+
+    #tabArea{
+        background-color: tan;
+    }
+    .tab{
+        display: inline-block;
+        width: 150px;
+        height: 40px;
+        background-color: teal;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 6px;
+        text-align: center;
+    }
+    .tab.selectTabHeader{
+        background-color: blueviolet;
+    }
+    #tabData{
+        display: none;
+    }
+    #tab-data.selectedTab{
+        display: block;
+        color: black;
+        background-color: orange;
+        height: 400px;
+        padding: 5px;
+    }
+
+    </style>
+</head>
+
+
+<body>
+
+<div id="tabArea">
+    <div id="tabHeader">
+        <a id="tab1" class="tab selectTabHeader">Tab 1 </a>
+        <a id="tab2" class="tab">Tab 2</a>
+        <a id="tab3" class="tab">Tab 3 </a>
+    </div>
+    <div id="tabData">
+        <div id="tab-data" class="tab1 selectedTab">
+            tab 1 data
+        </div>
+        <div id="tab-data" class="tab2">
+                tab 2 data
+        </div>
+        <div id="tab-data" class="tab3">
+            tab 3 data
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
