@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    function range(start, end, step){
+        if (step == null) {
+            step = 1;
+        }
+        var numbers = [];
+
+        if (step > 0) {
+            for (var i = start; i <= end; i += step) {
+                numbers.push(i);
+            }
+        }
+        else{
+            for (var i = start; i >= end; i += step) {
+                numbers.push(i);
+            };
+        }
+        return numbers;
+    }
+
+    function sum(array){
+        var total = 0;
+        for (var i = 0; i < array.length; i++) {
+             total += array[i];
+        };
+        return total;
+    }
+
+    console.log(range(1,10));
+    console.log(sum(range(1,10)));
+    console.log(sum([1,2]));
+    </script>
+
+</body>
+</html>
